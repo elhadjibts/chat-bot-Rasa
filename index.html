@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>ChatBot</title>
+</head>
+<body>
+    <script>!(function () {
+  let e = document.createElement("script"),
+    t = document.head || document.getElementsByTagName("head")[0];
+  (e.src =
+    "https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.0/lib/index.js"),
+    // Replace 1.x.x with the version that you want
+    (e.async = !0),
+    (e.onload = () => {
+      window.WebChat.default(
+        {
+          customData: { language: "fr" },
+          socketUrl: "http://localhost:5005",
+          params: {"storage": "session"},
+          title: "Besoin d'aide ?",
+          subtitle: "Pose tes questions ici !",
+          inputTextFieldHint: "Écrivez un message",
+          initPayload: "/bonjour",
+          fullScreenMode: false,
+          showFullScreenButton: false,
+        },
+        null
+      );
+    }),
+    t.insertBefore(e, t.firstChild);
+})();
+</script>
+
+</body>
+</html>

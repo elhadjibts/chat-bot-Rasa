@@ -1,0 +1,124 @@
+version: "2.0"
+
+intents:
+  - bonjour
+  - au_revoir
+  - affirmation
+  - refus
+  - humeur_joyeux
+  - humeur_triste
+  - bot_challenge
+  - demander_heure
+  - demander_humeur
+  - probleme_examens
+  - probleme_examens_DEG
+  - probleme_examens_LLSH
+  - probleme_examens_autres
+  - aide_psy
+  - probleme_teams_paon
+  - probleme_activation_compte_ent
+  - probleme_presto
+  - probleme_covid
+  - relations_inter
+  - guichet_AIDE
+  - service_social
+  - service_bourse
+  - plan_campus
+
+actions:
+  - action_donner_heure
+
+responses:
+  utter_bonjour:
+  - text: "Bonjour ! En quoi puis-je t'aider ? "
+
+  utter_reconforter:
+  - text: "Voici quelque chose pour te réconforter:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_demander_information_utile:
+  - text: "Est-ce que cette information t'as été utile ?"
+
+  utter_joyeux:
+  - text: "Super !"
+
+  utter_demander_aide:
+    - text: "En quoi puis-je t'aider ?"
+
+  utter_au_revoir:
+  - text: "Au revoir"
+
+  utter_je_suis_un_bot:
+  - text: "Je suis un bot, créé avec Rasa."
+
+  utter_probleme_examens:
+  - text: "D'accord, tu as un problème pour passer tes examens, quel type d'études fais-tu ?"
+    buttons:
+    - title: "UFR Droit - Economie - Gestion"
+      payload: "/probleme_examens_DEG"
+    - title: "UFR Lettres - Langues - Sciences Humaines"
+      payload: "/probleme_examens_LLSH"
+    - title: "Autres"
+      payload: "/probleme_examens_autres"
+
+  utter_probleme_examens_DEG:
+    - text: "Il faut envoyer un mail à cette adresse : service.etudes.deg@univ-orleans.fr "
+
+  utter_probleme_examens_LLSH:
+    - text: "Il faut envoyer un mail à cette adresse : rsa.llsh@univ-orleans.fr "
+
+  utter_probleme_examens_autres:
+    - text: "Il faut contacter votre scolarité "
+
+  utter_demander_autre_question:
+    - text: "Si tu as une autre question pose la, sinon n'hesite pas à nous donner ton feedback sur ta conversation"
+      buttons:
+      - title: "Oui, j'ai une autre question"
+        payload: "/autre_question"
+      - title: "Donner mon feedback"
+        payload: "/donner_feedback"
+      - title: "Au revoir"
+        payload: "/au_revoir"
+
+  utter_repondre_humeur:
+    - text: "Bien merci."
+
+  utter_aide_psy:
+    - text: "Tu peux trouver un soutien psychologique ici : https://www.univ-orleans.fr/fr/univ/universite/infos-crise-sanitaire/vous-etes-etudiante/soutien-psychologique-individuel"
+
+  utter_probleme_teams_paon:
+    - text: "Si tu as un probleme avec teams, office ou paon : aide.paon@univ-orleans.fr
+            Plus d'informations sur le dispositif paon : https://www.univ-orleans.fr/es/node/5166"
+
+  utter_probleme_activation_compte_ent:
+    - text: "Si tu as un problème pour activer ton compte ou pour te connecter à l'ent : aide.ent@univ-orleans.fr "
+
+  utter_probleme_presto:
+    - text: "Toute demande de prêt d'ordinateur doit être fait aux enseignants et aux scolarités.
+            Pour tout problème envoyer un mail à cette adresse : aide.presto@univ-orleans.fr.
+            Plus d'information ici : https://www.univ-orleans.fr/fr/univ/vie-des-campus/bien-gerer-ses-etudes/presto-pret-dordinateurs"
+
+  utter_probleme_covid:
+    - text: "Il faut remplir le formulaire à cette adresse : https://www.univ-orleans.fr/fr/form/l-universite-vous-aide"
+
+  utter_relations_inter:
+    - text: "Pour contacter le service des relations internationales : dri@univ-orleans.fr
+            Plus d'information ici : https://www.univ-orleans.fr/fr/univ/international"
+
+  utter_guichet_AIDE:
+    - text: "Toutes les informations concernant le dispositif AIDE se situent ici : https://www.univ-orleans.fr/es/aide"
+
+  utter_service_social:
+    - text: "Pour contacter le service social : https://www.crous-orleans-tours.fr/action-sociale/contacter-le-service-social/"
+
+  utter_bourse:
+    - text: "Pour avoir des informations à propos de la bourse et voir si vous êtes éligible vous pouvez directement visité le site du crous-orleans sur ce lien https://www.crous-orleans-tours.fr/bourses/ .
+     Pour en savoir plus sur la demande de bourse vous pouvez aussi visiter le site officiel https://www.messervices.etudiant.gouv.fr/envole/ sur la rubrique 'Demander une bourse ou une aide' .
+      Voici leur numéro téléphone 02 38 24 27 00 (du lundi au vendredi de 9h à 17h)"
+
+  utter_plan_campus:
+    - text: "Vous pouvez trouver le plan du campus ici: https://www.univ-orleans.fr/fr/univ/vie-des-campus/bien-gerer-ses-etudes/deplacez-vous"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
